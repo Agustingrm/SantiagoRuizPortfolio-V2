@@ -1,5 +1,7 @@
+import "../Assets/Styles/CSS/Projects.css";
+
 const GraphicsPage: React.FC<{}> = () => {
-  return <div>Graphics Page......</div>;
+  return <div className="projectContainer">Graphics Page......</div>;
 };
 
 export default GraphicsPage;

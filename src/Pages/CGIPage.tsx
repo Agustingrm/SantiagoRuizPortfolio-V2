@@ -1,5 +1,7 @@
+import "../Assets/Styles/CSS/Projects.css";
+
 const CGIPage: React.FC<{}> = () => {
-  return <div>CGI Page......</div>;
+  return <div className="grid">CGI Page......</div>;
 };
 
 export default CGIPage;
