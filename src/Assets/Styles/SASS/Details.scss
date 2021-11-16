@@ -1,10 +1,31 @@
 .detailsContainer {
   width: calc(100% - 400px);
   margin-left: 400px;
-  background-color: rebeccapurple;
-  height: 90vh;
   box-sizing: border-box;
   h3 {
     margin: 0;
   }
+}
+
+.detailsPhotoContainer {
+  //!important is used here because <Slider/> commes with css that is needed to override
+  display: grid !important;
+  width: auto !important;
+  //The following calculation makes the two formats of image the same height
+  //436px: 400px for margin left, 16px for scrollbar 20px for padding
+  //0.656: relation between 807px and 1230px, the size of the horizontal image
+  grid-auto-rows: calc(calc(100vw - 436px) * 0.655) !important;
+  padding: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
+  border: none !important;
+  img {
+    height: 100%;
+    margin: auto;
+  }
+}
+
+.detailsPhotoContainer:focus {
+  outline: none !important;
+  border: none !important;
 }

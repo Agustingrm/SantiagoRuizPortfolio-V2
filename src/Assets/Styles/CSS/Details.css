@@ -1,12 +1,29 @@
 .detailsContainer {
   width: calc(100% - 400px);
   margin-left: 400px;
-  background-color: rebeccapurple;
-  height: 90vh;
   box-sizing: border-box;
 }
 .detailsContainer h3 {
   margin: 0;
+}
+
+.detailsPhotoContainer {
+  display: grid !important;
+  width: auto !important;
+  grid-auto-rows: calc(calc(100vw - 436px) * 0.655) !important;
+  padding: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
+  border: none !important;
+}
+.detailsPhotoContainer img {
+  height: 100%;
+  margin: auto;
+}
+
+.detailsPhotoContainer:focus {
+  outline: none !important;
+  border: none !important;
 }
 
 /*# sourceMappingURL=Details.css.map */

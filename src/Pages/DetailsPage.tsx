@@ -9,10 +9,10 @@ const DetailsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
   const [activeSlide, SetActiveSlide] = useState(0);
   const [activeSlide2, SetActiveSlide2] = useState(0);
-  let { section, project } = useParams();
+  let { section } = useParams();
 
   let currentSection = "project" + section;
-  let currentProject = project;
+  // let currentProject = project;
 
   const settings = {
     dots: true,
@@ -21,6 +21,7 @@ const DetailsPage: React.FC<{}> = () => {
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: true,
     beforeChange: (current: number, next: number) => SetActiveSlide(next),
     afterChange: (current: number) => SetActiveSlide2(current),
   };
@@ -30,11 +31,10 @@ const DetailsPage: React.FC<{}> = () => {
 
   return (
     <div className="detailsContainer">
-      <h3>Probando</h3>
       <Slider {...settings}>
         {context[currentSection].map((projectName: string) => {
           return (
-            <div>
+            <div className='detailsPhotoContainer'>
               {context.projectDatabase[projectName].detailPhotos.map((project: string) => {
                 return (
                   <img
