@@ -24,7 +24,7 @@ function App(): JSX.Element {
             <Route path="/industrial-design" element={<IndustrialDesignPage />} />
             <Route path="/CGI" element={<CGIPage />} />
             <Route path="/graphics" element={<GraphicsPage />} />
-            <Route path="/project/:project" element={<DetailsPage />} />
+            <Route path="/:section/:project" element={<DetailsPage />} />
           </Routes>
         </BrowserRouter>
       </GlobalState>

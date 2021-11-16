@@ -3,16 +3,17 @@ import PortfolioContext from "../Context/PortfolioContext";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-const OverviewPage: React.FC<{}> = () => {
+
+const OverviewPage: React.FC<{}> = (props:any) => {
+  console.log(props)
   const context = useContext(PortfolioContext);
   return (
     <div className="projectContainer">
       <div className="imgGrid">
         {context.projectOverview.map((projectName: string) => {
           let span = context.projectDatabase[projectName].coverSpan;
-          console.log(projectName + span)
           return (
-            <Link to={"/project/" + projectName} key={projectName} className={"span" + span}>
+            <Link to={"/Overview/" + projectName} key={projectName} className={"span" + span}>
               <img
                 src={context.projectDatabase[projectName].cover}
                 alt={context.projectDatabase[projectName].name}

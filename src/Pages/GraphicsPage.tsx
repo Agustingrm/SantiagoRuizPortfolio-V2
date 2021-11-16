@@ -12,7 +12,7 @@ const GraphicsPage: React.FC<{}> = () => {
           let span = context.projectDatabase[projectName].coverSpan;
           console.log(projectName + span)
           return (
-            <Link to={"/project/" + projectName} key={projectName} className={"span" + span}>
+            <Link to={"/Graphics/" + projectName} key={projectName} className={"span" + span}>
               <img
                 src={context.projectDatabase[projectName].cover}
                 alt={context.projectDatabase[projectName].name}

@@ -1,0 +1,10 @@
+.detailsContainer {
+  width: calc(100% - 400px);
+  margin-left: 400px;
+  background-color: rebeccapurple;
+  height: 90vh;
+  box-sizing: border-box;
+  h3 {
+    margin: 0;
+  }
+}
