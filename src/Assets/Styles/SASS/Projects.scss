@@ -1,6 +1,26 @@
 .projectContainer {
-  background-color: rebeccapurple;
   width: calc(100% - 400px);
   float: right;
   margin-left: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.imgGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 24.3924%);
+  grid-auto-flow: dense;
+  column-gap: 0.813%;
+  row-gap: 0.2vw;
+  img {
+    width: 100%;
+  }
+}
+
+.span1 {
+  grid-column: span 1;
+}
+
+.span2 {
+  grid-column: span 2;
 }
