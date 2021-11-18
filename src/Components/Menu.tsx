@@ -6,7 +6,7 @@ function Menu(): JSX.Element {
   return (
     <div className="container">
       <Link to="/">
-        <h1>Santiago Ruiz</h1>
+        <h1>SANTIAGO RUIZ</h1>
       </Link>
       <ul>
         <li>
@@ -27,7 +27,7 @@ function Menu(): JSX.Element {
           <Link to="contact">Contact</Link>
         </li>
         <li>
-          <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" id="instagram">
+          <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" className="instagram">
             Instagram
           </a>
         </li>

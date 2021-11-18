@@ -11,13 +11,33 @@
 .container {
   width: 400px;
   height: 100vh;
+  padding: 10px;
   position: fixed;
-  background-color: #ccc;
+  background-color: transparent;
+  box-sizing: border-box;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: HelNowReg;
+    font-size: 18px;
+  }
 }
 
 h1 {
   font-family: HelNowReg;
+  font-size: 48px;
   margin: 0;
-  padding: 10px;
+  padding-bottom: 30px;
   width: 130px;
+  line-height: 0.9;
+  letter-spacing: 1px;
+}
+
+.instagram {
+  position: absolute;
+  bottom: 50px;
 }

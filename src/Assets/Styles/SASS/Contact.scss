@@ -1,4 +1,29 @@
+@font-face {
+  font-family: HelNowReg;
+  src: url("../../Fonts/HelveticaNowDisplay-Regular.woff") format("truetype");
+}
+
 .contactContainer {
   margin-left: 400px;
   padding: 20px;
+  font-family: HelNowReg;
+  a,
+  p {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+.contactContainer p:nth-child(1) {
+  padding: 120px 0 10px;
+}
+
+.contactContainer p:nth-child(4) {
+  padding-top: 10px;
+}
+
+.contactContainer p:nth-child(6) {
+  padding-top: 10px;
 }

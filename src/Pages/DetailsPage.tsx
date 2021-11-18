@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import { useContext } from "react";
 import PortfolioContext from "../Context/PortfolioContext";
 import "../Assets/Styles/CSS/Details.css";
+import SamplePrevArrow from "../Components/react-slick-arrows/SamplePrevArrow";
+import SampleNextArrow from "../Components/react-slick-arrows/SampleNextArrow";
 
 const DetailsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
@@ -20,20 +22,21 @@ const DetailsPage: React.FC<{}> = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
     initialSlide: currentProjectIndex,
     beforeChange: (current: number, next: number) => SetActiveSlide(next),
     afterChange: (current: number) => SetActiveSlide2(current),
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow />,
   };
 
   console.log(activeSlide);
   console.log(context[currentSection][activeSlide2]);
 
   useEffect(() => {
-    console.log(currentProjectIndex)
+    console.log(currentProjectIndex);
     navigate("/" + section + "/" + context[currentSection][activeSlide]);
   }, [activeSlide2]);
 

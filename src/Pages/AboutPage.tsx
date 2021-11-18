@@ -19,7 +19,6 @@ const AboutPage: React.FC<{}> = () => {
       <p>a musician: Gustavo Santaolalla</p>
       <p>a painter: Guillermo Lorca García H.</p>
       <p>a person: Elena Romero (my grandmother)</p>
-      <p>Tucumán - Argentina</p>
       <img src={aboutPhoto} alt="Myself" loading="lazy" />
     </div>
   );
