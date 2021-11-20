@@ -29,3 +29,55 @@
   outline: none !important;
   border: none !important;
 }
+
+.slick-next {
+  background-color: transparent;
+  height: 100%;
+  margin: -25px 25px 0 0;
+  width: 200px;
+  cursor: url(../../Icons/rightArrow.svg), pointer;
+  z-index: 5;
+}
+
+.slick-prev {
+  background-color: transparent;
+  height: 100%;
+  margin: -25px 0 0 25px;
+  width: 200px;
+  cursor: url(../../Icons/leftArrow.svg), pointer;
+  z-index: 5;
+}
+
+@media all and (max-width: 959px) {
+  .detailsContainer {
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+    top: 74px;
+    position: relative;
+    overflow-y: hidden;
+    z-index: 0 !important;
+    .showMenu, .transitionMenu {
+      display: none !important;
+    }
+  }
+
+
+  .detailsPhotoContainer {
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 100px);
+    width: 100%;
+    float: none;
+    z-index: 0 !important;
+    grid-auto-rows: calc(calc(100vw - 36px) * 0.655) !important;
+
+  }
+
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+}

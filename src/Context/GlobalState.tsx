@@ -1,5 +1,5 @@
 import PortfolioContext from "./PortfolioContext";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import BedroomRenderCover from "../Assets/Projects/BedroomRender/BedroomRenderCover.jpg";
 import BedroomRender1 from "../Assets/Projects/BedroomRender/BedroomRender1.jpg";
 import BedroomRender2 from "../Assets/Projects/BedroomRender/BedroomRender2.jpg";
@@ -66,6 +66,18 @@ function GlobalState({ children }: { children: ReactNode }): JSX.Element {
   const projectCGI = ["BedroomRender", "SofaRender", "HotelRender"];
   const projectGraphics = ["Wheel", "Kitchen", "Curtains"];
   const projectIndustrialDesign = ["Grinder", "Knife", "Mirror", "Spoon"];
+
+  //This handles the Menu Logo rotation on click
+  const [rotation, setRotation] = useState(0);
+  const handleRotation = () => {
+    if (rotation === 0) {
+      setRotation(rotation - 90);
+    } else {
+      setRotation(0);
+    }
+  };
+  //Handles the menu display on Click
+  const [display, setDisplay] = useState("");
 
   const projectDatabase = {
     BedroomRender: {
@@ -161,6 +173,10 @@ function GlobalState({ children }: { children: ReactNode }): JSX.Element {
         projectCGI,
         projectGraphics,
         projectIndustrialDesign,
+        rotation,
+        handleRotation,
+        display,
+        setDisplay,
       }}
     >
       {children}

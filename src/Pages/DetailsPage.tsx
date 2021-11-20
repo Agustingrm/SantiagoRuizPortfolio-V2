@@ -5,8 +5,6 @@ import Slider from "react-slick";
 import { useContext } from "react";
 import PortfolioContext from "../Context/PortfolioContext";
 import "../Assets/Styles/CSS/Details.css";
-import SamplePrevArrow from "../Components/react-slick-arrows/SamplePrevArrow";
-import SampleNextArrow from "../Components/react-slick-arrows/SampleNextArrow";
 
 const DetailsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
@@ -18,8 +16,16 @@ const DetailsPage: React.FC<{}> = () => {
   const [activeSlide2, SetActiveSlide2] = useState(currentProjectIndex);
   const navigate = useNavigate();
 
+  const SamplePrevArrow = () => {
+    <div></div>
+  }
+
+  const SampleNextArrow = () => {
+    <div></div>
+  }
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -28,24 +34,21 @@ const DetailsPage: React.FC<{}> = () => {
     initialSlide: currentProjectIndex,
     beforeChange: (current: number, next: number) => SetActiveSlide(next),
     afterChange: (current: number) => SetActiveSlide2(current),
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
+    prevArrow: SamplePrevArrow(),
+    nextArrow: SampleNextArrow(),
   };
 
-  console.log(activeSlide);
-  console.log(context[currentSection][activeSlide2]);
-
   useEffect(() => {
-    console.log(currentProjectIndex);
     navigate("/" + section + "/" + context[currentSection][activeSlide]);
   }, [activeSlide2]);
+
 
   return (
     <div className="detailsContainer">
       <Slider {...settings}>
         {context[currentSection].map((projectName: string) => {
           return (
-            <div className="detailsPhotoContainer">
+            <div className={context.display + " detailsPhotoContainer"}>
               {context.projectDatabase[projectName].detailPhotos.map((project: string) => {
                 return <img src={project} alt={context.projectDatabase[projectName].name} loading="lazy" key={project} />;
               })}
