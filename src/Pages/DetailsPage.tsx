@@ -42,10 +42,6 @@ const DetailsPage: React.FC<{}> = () => {
     navigate("/" + section + "/" + context[currentSection][activeSlide]);
   }, [activeSlide2]);
 
-  useEffect(() => {
-    window.scrollTo(1500, 1500);
-  }, [activeSlide]);
-
   return (
     <div className="detailsContainer">
       <div className="projectInfo">
@@ -63,6 +59,17 @@ const DetailsPage: React.FC<{}> = () => {
         {context[currentSection].map((projectName: string) => {
           return (
             <div className={context.display + " detailsPhotoContainer"} key={projectName}>
+              <div className="projectInfoMobile">
+                <p className="detailNameMobile">{context.projectDatabase[projectName].name}</p>
+                <p className="detailYearMobile">{context.projectDatabase[projectName].year}</p>
+                <div className="detailTextMobile">
+                  {context.projectDatabase[projectName].textBox.map((line: string) => (
+                    <p key={line} className="detailLinesMobile">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
               {context.projectDatabase[projectName].detailPhotos.map((project: string) => {
                 return <img src={project} alt={context.projectDatabase[projectName].name} loading="lazy" key={project} />;
               })}
