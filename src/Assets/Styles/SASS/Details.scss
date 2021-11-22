@@ -30,6 +30,32 @@
   border: none !important;
 }
 
+.detailName {
+  margin: 5px 0 2px;
+  font-size: 18px;
+  font-family: HelNowMed;
+}
+
+
+
+.detailYear {
+  margin-bottom: 20px;
+  font-family: HelNowReg;
+  margin: 0;
+  font-size: 14px;
+  color: #808080;
+}
+
+.detailText {
+  margin: 28px 0;
+}
+
+.detailLines {
+  font-size: 16px;
+  font-family: HelNowReg;
+  margin: 0;
+}
+
 .slick-next {
   background-color: transparent;
   height: 100%;
@@ -55,26 +81,34 @@
     box-sizing: border-box;
     top: 74px;
     position: relative;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: calc(100vh - 100px);
     z-index: 0 !important;
-    .showMenu, .transitionMenu {
+    .showMenu,
+    .transitionMenu {
       display: none !important;
     }
   }
 
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .projectInfo {
+    padding: 10px;
+    z-index: 0;
+  }
 
   .detailsPhotoContainer {
     position: relative;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
-    height: calc(100vh - 100px);
     width: 100%;
     float: none;
     z-index: 0 !important;
     grid-auto-rows: calc(calc(100vw - 36px) * 0.655) !important;
-
   }
-
 
   .slick-next,
   .slick-prev {

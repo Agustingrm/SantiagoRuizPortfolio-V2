@@ -129,7 +129,7 @@ h1 {
 
   .dropdownMenu {
     background-color: white;
-    height: calc(100vh - 74px);
+    height: 100vh;
   }
 
   .dropdownMenu ul:nth-child(1) {

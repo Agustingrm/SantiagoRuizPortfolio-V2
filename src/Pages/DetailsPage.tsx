@@ -10,19 +10,19 @@ const DetailsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
   let { section, project } = useParams();
   let currentSection = "project" + section;
-  let currentProject = project;
+  let currentProject = project != null ? project : "";
   let currentProjectIndex = context[currentSection].findIndex((element: string) => element === currentProject);
   const [activeSlide, SetActiveSlide] = useState(currentProjectIndex);
   const [activeSlide2, SetActiveSlide2] = useState(currentProjectIndex);
   const navigate = useNavigate();
 
   const SamplePrevArrow = () => {
-    <div></div>
-  }
+    <div></div>;
+  };
 
   const SampleNextArrow = () => {
-    <div></div>
-  }
+    <div></div>;
+  };
 
   const settings = {
     dots: false,
@@ -42,13 +42,27 @@ const DetailsPage: React.FC<{}> = () => {
     navigate("/" + section + "/" + context[currentSection][activeSlide]);
   }, [activeSlide2]);
 
+  useEffect(() => {
+    window.scrollTo(1500, 1500);
+  }, [activeSlide]);
 
   return (
     <div className="detailsContainer">
+      <div className="projectInfo">
+        <p className="detailName">{context.projectDatabase[currentProject].name}</p>
+        <p className="detailYear">{context.projectDatabase[currentProject].year}</p>
+        <div className="detailText">
+          {context.projectDatabase[currentProject].textBox.map((line: string) => (
+            <p key={line} className="detailLines">
+              {line}
+            </p>
+          ))}
+        </div>
+      </div>
       <Slider {...settings}>
         {context[currentSection].map((projectName: string) => {
           return (
-            <div className={context.display + " detailsPhotoContainer"}>
+            <div className={context.display + " detailsPhotoContainer"} key={projectName}>
               {context.projectDatabase[projectName].detailPhotos.map((project: string) => {
                 return <img src={project} alt={context.projectDatabase[projectName].name} loading="lazy" key={project} />;
               })}
