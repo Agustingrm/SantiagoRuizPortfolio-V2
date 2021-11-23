@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Assets/Styles/CSS/Menu.css";
 import crossHorizontal from "../Assets/Icons/crossHorizontal.svg";
@@ -21,10 +21,21 @@ function Menu(): JSX.Element {
     context.display === "showMenu" ? menuTransition() : context.setDisplay("showMenu");
   };
 
+  const handleClickLink = (category: string) => {
+    context.setCategory(category);
+  };
+
+  //Handles visibility of menu according to width of screen
+  useEffect(() => {
+    if (window.innerWidth < 960) {
+      context.setDisplay("hideMenu");
+    }
+  },[]);
+
   return (
     <div className="container">
       <div className="topContainer">
-        <Link to="/">
+        <Link to="/" onClick={() => handleClickLink("default")}>
           <h1>SANTIAGO RUIZ</h1>
         </Link>
         <div className="menuLogoContainer">
@@ -42,24 +53,52 @@ function Menu(): JSX.Element {
         <div className="dropdownMenu">
           <ul>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about" onClick={() => handleClickLink("about")}>
+                {/* Renders a diferent <p> according to the category that that the user is navigating */}
+                {context.category === "about" && <p className="linkSelected">About</p>}
+                {context.category === "default" && <p>About</p>}
+                {context.category !== "about" && context.category !== "default" && <p className="unpressedLink">About</p>}
+              </Link>
             </li>
             <li>
-              <Link to="/industrial-design">Industrial Design</Link>
+              <Link to="/industrial-design" onClick={() => handleClickLink("industrialDesign")}>
+                {context.category === "industrialDesign" && <p className="linkSelected">Industrial Design</p>}
+                {context.category === "default" && <p>Industrial Design</p>}
+                {context.category !== "industrialDesign" && context.category !== "default" && (
+                  <p className="unpressedLink">Industrial Design</p>
+                )}
+              </Link>
             </li>
             <li>
-              <Link to="/CGI">CGI</Link>
+              <Link to="/CGI" onClick={() => handleClickLink("CGI")}>
+                {context.category === "CGI" && <p className="linkSelected">CGI</p>}
+                {context.category === "default" && <p>CGI</p>}
+                {context.category !== "CGI" && context.category !== "default" && <p className="unpressedLink">CGI</p>}
+              </Link>
             </li>
             <li>
-              <Link to="/graphics">Graphics</Link>
+              <Link to="/graphics" onClick={() => handleClickLink("graphics")}>
+                {context.category === "graphics" && <p className="linkSelected">Graphics</p>}
+                {context.category === "default" && <p>Graphics</p>}
+                {context.category !== "graphics" && context.category !== "default" && <p className="unpressedLink">Graphics</p>}
+              </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link to="contact">Contact</Link>
+              <Link to="contact" onClick={() => handleClickLink("contact")}>
+                {context.category === "contact" && <p className="linkSelected">Contact</p>}
+                {context.category === "default" && <p>Contact</p>}
+                {context.category !== "contact" && context.category !== "default" && <p className="unpressedLink">Contact</p>}
+              </Link>
             </li>
             <li>
-              <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" className="instagram">
+              <a
+                href="https://www.instagram.com/ruizsantiago/"
+                rel="noreferrer noopener"
+                target="_blank"
+                className={"instagram " + (context.category !== "default" && "unpressedLink")}
+              >
                 Instagram
               </a>
             </li>

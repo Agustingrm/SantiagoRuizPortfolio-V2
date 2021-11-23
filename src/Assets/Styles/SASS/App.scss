@@ -4,4 +4,9 @@ body {
 
 * {
   -webkit-tap-highlight-color: transparent;
+  overflow: visible;
+}
+
+a {
+  color: inherit;
 }

@@ -32,6 +32,7 @@
   left: 150px;
   top: 45%;
   width: 240px;
+  text-align: right;
 }
 
 .projectInfoMobile {
@@ -73,6 +74,10 @@
   margin: 0;
 }
 
+.mobileBottomBox {
+  display: none;
+}
+
 .slick-next {
   background-color: transparent;
   height: 100%;
@@ -107,7 +112,6 @@
     top: 74px;
     position: relative;
     overflow-y: scroll;
-    scrollbar-width: none;
     height: calc(100vh - 74px);
     z-index: 0 !important;
   }
@@ -155,6 +159,13 @@
     z-index: 0 !important;
     grid-template-rows: auto;
     grid-auto-rows: calc(calc(100vw - 19px) * 0.655) !important;
+  }
+
+  .mobileBottomBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px;
   }
 
   .slick-next,

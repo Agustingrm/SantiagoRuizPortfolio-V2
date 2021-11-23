@@ -79,6 +79,9 @@ function GlobalState({ children }: { children: ReactNode }): JSX.Element {
   //Handles the menu display on Click
   const [display, setDisplay] = useState("");
 
+  //Handles categories of the menu
+  const [category, setCategory] = useState("default");
+
   const projectDatabase = {
     BedroomRender: {
       name: "Bedroom Render",
@@ -177,6 +180,8 @@ function GlobalState({ children }: { children: ReactNode }): JSX.Element {
         handleRotation,
         display,
         setDisplay,
+        category,
+        setCategory
       }}
     >
       {children}
