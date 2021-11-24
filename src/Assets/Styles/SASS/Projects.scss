@@ -33,4 +33,8 @@
     margin-left: 0;
     margin: 0;
   }
+  .imgGrid {
+    grid-template-columns: repeat(2, 49.5%);
+    column-gap: 1%;
+  }
 }
