@@ -13,7 +13,7 @@ function Menu(): JSX.Element {
   //Code to handle the transition of the Menu
   const menuTransition = () => {
     context.setDisplay("transitionMenu");
-    setTimeout(() => context.setDisplay("hideMenu"), 130);
+    setTimeout(() => context.setDisplay("hideMenu"), 150);
   };
 
   const handleClick = () => {
@@ -23,6 +23,10 @@ function Menu(): JSX.Element {
 
   const handleClickLink = (category: string) => {
     context.setCategory(category);
+    if (context.display === "showMenu") {
+      context.handleRotation();
+      menuTransition();
+    }
   };
 
   //Handles visibility of menu according to width of screen
@@ -30,7 +34,7 @@ function Menu(): JSX.Element {
     if (window.innerWidth < 960) {
       context.setDisplay("hideMenu");
     }
-  },[]);
+  }, []);
 
   return (
     <div className="container">

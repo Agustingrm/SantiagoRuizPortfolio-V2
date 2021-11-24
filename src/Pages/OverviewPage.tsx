@@ -2,13 +2,21 @@ import "../Assets/Styles/CSS/Projects.css";
 import PortfolioContext from "../Context/PortfolioContext";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { motion } from "framer-motion";
+import { fading, transition } from "../Assets/Animations/AnimationIndex";
 
-
-const OverviewPage: React.FC<{}> = (props:any) => {
-  console.log(props)
+const OverviewPage: React.FC<{}> = (props: any) => {
+  console.log(props);
   const context = useContext(PortfolioContext);
   return (
-    <div className="projectContainer">
+    <motion.div
+      className="projectContainer"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fading}
+      transition={transition}
+    >
       <div className="imgGrid">
         {context.projectOverview.map((projectName: string) => {
           let span = context.projectDatabase[projectName].coverSpan;
@@ -23,7 +31,7 @@ const OverviewPage: React.FC<{}> = (props:any) => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -159,6 +159,7 @@
     z-index: 0 !important;
     grid-template-rows: auto;
     grid-auto-rows: calc(calc(100vw - 19px) * 0.655) !important;
+    padding-top: 0;
   }
 
   .mobileBottomBox {

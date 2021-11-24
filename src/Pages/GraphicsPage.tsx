@@ -2,15 +2,24 @@ import "../Assets/Styles/CSS/Projects.css";
 import PortfolioContext from "../Context/PortfolioContext";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { motion } from "framer-motion";
+import { fading, transition } from "../Assets/Animations/AnimationIndex";
 
 const GraphicsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
   return (
-    <div className="projectContainer">
+    <motion.div
+      className="projectContainer"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fading}
+      transition={transition}
+    >
       <div className="imgGrid">
         {context.projectGraphics.map((projectName: string) => {
           let span = context.projectDatabase[projectName].coverSpan;
-          console.log(projectName + span)
+          console.log(projectName + span);
           return (
             <Link to={"/Graphics/" + projectName} key={projectName} className={"span" + span}>
               <img
@@ -22,7 +31,7 @@ const GraphicsPage: React.FC<{}> = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

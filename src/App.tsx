@@ -1,5 +1,6 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./Assets/Styles/CSS/App.css";
 import Menu from "./Components/Menu";
 import GlobalState from "./Context/GlobalState";
@@ -15,8 +16,8 @@ function App(): JSX.Element {
   return (
     <div>
       <GlobalState>
-        <BrowserRouter>
-          <Menu />
+        <Menu />
+        <AnimatePresence exitBeforeEnter>
           <Routes>
             <Route path="/" element={<OverviewPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -26,7 +27,7 @@ function App(): JSX.Element {
             <Route path="/graphics" element={<GraphicsPage />} />
             <Route path="/:section/:project" element={<DetailsPage />} />
           </Routes>
-        </BrowserRouter>
+        </AnimatePresence>
       </GlobalState>
     </div>
   );

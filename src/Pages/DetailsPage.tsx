@@ -7,6 +7,8 @@ import PortfolioContext from "../Context/PortfolioContext";
 import "../Assets/Styles/CSS/Details.css";
 import leftArrow from "../Assets/Icons/leftArrow.svg";
 import rightArrow from "../Assets/Icons/rightArrow.svg";
+import { motion } from "framer-motion";
+import { fading, transition } from "../Assets/Animations/AnimationIndex";
 
 const DetailsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
@@ -17,7 +19,7 @@ const DetailsPage: React.FC<{}> = () => {
   const [activeSlide, SetActiveSlide] = useState(currentProjectIndex);
   const [activeSlide2, SetActiveSlide2] = useState(currentProjectIndex);
   const navigate = useNavigate();
-  const sliderRef = useRef({slickNext():void{},slickPrev():void{}});
+  const sliderRef = useRef({ slickNext(): void {}, slickPrev(): void {} });
 
   const SamplePrevArrow = () => {
     <div></div>;
@@ -53,7 +55,15 @@ const DetailsPage: React.FC<{}> = () => {
   }, [activeSlide]);
 
   return (
-    <div className="detailsContainer" id="scrollToTop">
+    <motion.div
+      className="detailsContainer"
+      id="scrollToTop"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={fading}
+      transition={transition}
+    >
       <div className="projectInfo">
         <p className="detailName">{context.projectDatabase[currentProject].name}</p>
         <p className="detailYear">{context.projectDatabase[currentProject].year}</p>
@@ -94,7 +104,7 @@ const DetailsPage: React.FC<{}> = () => {
           );
         })}
       </Slider>
-    </div>
+    </motion.div>
   );
 };
 
