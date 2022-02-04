@@ -61,11 +61,13 @@ function Menu(): JSX.Element {
                 {/* Renders a diferent <p> according to the category that that the user is navigating */}
                 {context.category === "about" && <p className="linkSelected">About</p>}
                 {context.category === "default" && <p>About</p>}
-                {context.category !== "about" && context.category !== "default" && <p className="unpressedLink">About</p>}
+                {context.category !== "about" && context.category !== "default" && (
+                  <p className="unpressedLink">About</p>
+                )}
               </Link>
             </li>
             <li>
-              <Link to="/industrial-design" onClick={() => handleClickLink("industrialDesign")}>
+              <Link to="/industrialDesign" onClick={() => handleClickLink("industrialDesign")}>
                 {context.category === "industrialDesign" && <p className="linkSelected">Industrial Design</p>}
                 {context.category === "default" && <p>Industrial Design</p>}
                 {context.category !== "industrialDesign" && context.category !== "default" && (
@@ -77,14 +79,18 @@ function Menu(): JSX.Element {
               <Link to="/CGI" onClick={() => handleClickLink("CGI")}>
                 {context.category === "CGI" && <p className="linkSelected">CGI</p>}
                 {context.category === "default" && <p>CGI</p>}
-                {context.category !== "CGI" && context.category !== "default" && <p className="unpressedLink">CGI</p>}
+                {context.category !== "CGI" && context.category !== "default" && (
+                  <p className="unpressedLink">CGI</p>
+                )}
               </Link>
             </li>
             <li>
               <Link to="/graphics" onClick={() => handleClickLink("graphics")}>
                 {context.category === "graphics" && <p className="linkSelected">Graphics</p>}
                 {context.category === "default" && <p>Graphics</p>}
-                {context.category !== "graphics" && context.category !== "default" && <p className="unpressedLink">Graphics</p>}
+                {context.category !== "graphics" && context.category !== "default" && (
+                  <p className="unpressedLink">Graphics</p>
+                )}
               </Link>
             </li>
           </ul>
@@ -93,7 +99,9 @@ function Menu(): JSX.Element {
               <Link to="contact" onClick={() => handleClickLink("contact")}>
                 {context.category === "contact" && <p className="linkSelected">Contact</p>}
                 {context.category === "default" && <p>Contact</p>}
-                {context.category !== "contact" && context.category !== "default" && <p className="unpressedLink">Contact</p>}
+                {context.category !== "contact" && context.category !== "default" && (
+                  <p className="unpressedLink">Contact</p>
+                )}
               </Link>
             </li>
             <li>

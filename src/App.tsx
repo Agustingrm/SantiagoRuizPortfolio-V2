@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./Assets/Styles/CSS/App.css";
 import Menu from "./Components/Menu";
 import GlobalState from "./Context/GlobalState";
@@ -10,7 +10,7 @@ import ContactPage from "./Pages/ContactPage";
 import DetailsPage from "./Pages/DetailsPage";
 import GraphicsPage from "./Pages/GraphicsPage";
 import IndustrialDesignPage from "./Pages/IndustrialDesignPage";
-import OverviewPage from "./Pages/OverviewPage";
+import GeneralPage from "./Pages/GeneralPage";
 
 function App(): JSX.Element {
   return (
@@ -19,10 +19,10 @@ function App(): JSX.Element {
         <Menu />
         <AnimatePresence exitBeforeEnter>
           <Routes>
-            <Route path="/" element={<OverviewPage />} />
+            <Route path="/" element={<GeneralPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/industrial-design" element={<IndustrialDesignPage />} />
+            <Route path="/industrialDesign" element={<IndustrialDesignPage />} />
             <Route path="/CGI" element={<CGIPage />} />
             <Route path="/graphics" element={<GraphicsPage />} />
             <Route path="/:section/:project" element={<DetailsPage />} />

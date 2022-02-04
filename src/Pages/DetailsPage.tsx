@@ -13,20 +13,23 @@ import { fading, transition } from "../Assets/Animations/AnimationIndex";
 const DetailsPage: React.FC<{}> = () => {
   const context = useContext(PortfolioContext);
   let { section, project } = useParams();
-  let currentSection = "project" + section;
+  let sectionExists = section !== undefined ? section : "";
+  let currentSection = "project" + sectionExists.charAt(0).toUpperCase() + sectionExists.slice(1);
   let currentProject = project != null ? project : "";
-  let currentProjectIndex = context[currentSection].findIndex((element: string) => element === currentProject);
+  let currentProjectIndex = context[currentSection].findIndex(
+    (element: string) => element === currentProject
+  );
   const [activeSlide, SetActiveSlide] = useState(currentProjectIndex);
   const [activeSlide2, SetActiveSlide2] = useState(currentProjectIndex);
   const navigate = useNavigate();
   const sliderRef = useRef({ slickNext(): void {}, slickPrev(): void {} });
 
   const SamplePrevArrow = () => {
-    <div></div>;
+    <></>;
   };
 
   const SampleNextArrow = () => {
-    <div></div>;
+    <></>;
   };
 
   const settings = {
@@ -46,66 +49,91 @@ const DetailsPage: React.FC<{}> = () => {
 
   //Changes URL on Slide and makes it go to the top
   useEffect(() => {
-    setTimeout(() => navigate("/" + section + "/" + context[currentSection][activeSlide]), 400);
+    if (!context.loading) {
+      setTimeout(() => navigate("/" + section + "/" + context[currentSection][activeSlide]), 400);
+    }
     //On desktop the scroll is on the whole screen
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     //On mobile is in particular div
     let scroll = document.getElementById("scrollToTop");
-    scroll?.scrollTo(0, 0);
+    scroll?.scrollTo({ top: 0, behavior: "smooth" });
   }, [activeSlide]);
 
-  return (
-    <motion.div
-      className="detailsContainer"
-      id="scrollToTop"
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={fading}
-      transition={transition}
-    >
-      <div className="projectInfo">
-        <p className="detailName">{context.projectDatabase[currentProject].name}</p>
-        <p className="detailYear">{context.projectDatabase[currentProject].year}</p>
-        <div className="detailText">
-          {context.projectDatabase[currentProject].textBox.map((line: string) => (
-            <p key={line} className="detailLines">
-              {line}
-            </p>
-          ))}
+  if (context.loading) {
+    return <></>;
+  } else {
+    return (
+      <motion.div
+        className="detailsContainer"
+        id="scrollToTop"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={fading}
+        transition={transition}
+      >
+        <div className="projectInfo">
+          <p className="detailName">{context.projects[sectionExists][currentProjectIndex].name}</p>
+          <p className="detailYear">{context.projects[sectionExists][currentProjectIndex].year}</p>
+          <div className="detailText">
+            {context.projects[sectionExists][currentProjectIndex].projectDescription.map(
+              (line: string, index: number) => (
+                <p key={line + index} className="detailLines">
+                  {line}
+                </p>
+              )
+            )}
+          </div>
         </div>
-      </div>
-      <Slider {...settings} ref={sliderRef}>
-        {context[currentSection].map((projectName: string) => {
-          return (
-            <div>
-              <div className={context.display + " detailsPhotoContainer"} key={projectName}>
-                <div className="projectInfoMobile">
-                  <p className="detailNameMobile">{context.projectDatabase[projectName].name}</p>
-                  <p className="detailYearMobile">{context.projectDatabase[projectName].year}</p>
-                  <div className="detailTextMobile">
-                    {context.projectDatabase[projectName].textBox.map((line: string) => (
-                      <p key={line} className="detailLinesMobile">
-                        {line}
-                      </p>
-                    ))}
+        <Slider {...settings} ref={sliderRef}>
+          {context.projects[sectionExists].map(
+            (project: {
+              name: string;
+              year: string;
+              projectDescription: Array<string>;
+              projectImages: Array<any>;
+            }) => {
+              return (
+                <div key={project.name}>
+                  <div
+                    className={context.display + " detailsPhotoContainer"}
+                    key={project.name + project.year}
+                  >
+                    <div className="projectInfoMobile">
+                      <p className="detailNameMobile">{project.name}</p>
+                      <p className="detailYearMobile">{project.year}</p>
+                      <div className="detailTextMobile">
+                        {project.projectDescription.map((line: string, index: number) => (
+                          <p key={line + index} className="detailLinesMobile">
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                    {project.projectImages.map((image: { asset: { url: string } }, index: number) => {
+                      return (
+                        <img
+                          src={image.asset.url}
+                          alt={context.projects[sectionExists][currentProjectIndex].name}
+                          loading="lazy"
+                          key={image.asset.url + index}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div className={context.display + " mobileBottomBox"}>
+                    <img src={leftArrow} alt="Left arrow" onClick={sliderRef.current.slickPrev} />
+                    <p className="detailNameMobile">{project.name}</p>
+                    <img src={rightArrow} alt="Right arrow" onClick={sliderRef.current.slickNext} />
                   </div>
                 </div>
-                {context.projectDatabase[projectName].detailPhotos.map((project: string) => {
-                  return <img src={project} alt={context.projectDatabase[projectName].name} loading="lazy" key={project} />;
-                })}
-              </div>
-              <div className={context.display + " mobileBottomBox"}>
-                <img src={leftArrow} alt="Left arrow" onClick={sliderRef.current.slickPrev} />
-                <p className="detailNameMobile">{context.projectDatabase[projectName].name}</p>
-                <img src={rightArrow} alt="Right arrow" onClick={sliderRef.current.slickNext} />
-              </div>
-            </div>
-          );
-        })}
-      </Slider>
-    </motion.div>
-  );
+              );
+            }
+          )}
+        </Slider>
+      </motion.div>
+    );
+  }
 };
 
 export default DetailsPage;

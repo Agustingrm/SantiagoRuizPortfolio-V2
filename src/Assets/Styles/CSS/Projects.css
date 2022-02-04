@@ -37,6 +37,7 @@
   .imgGrid {
     grid-template-columns: repeat(2, 49.5%);
     column-gap: 1%;
+    row-gap: 0;
   }
 }
 

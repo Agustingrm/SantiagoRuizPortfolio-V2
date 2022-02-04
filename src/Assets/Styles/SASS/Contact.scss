@@ -1,12 +1,7 @@
-@font-face {
-  font-family: HelNowReg;
-  src: url("../../Fonts/HelveticaNowDisplay-Regular.woff") format("truetype");
-}
-
 .contactContainer {
   margin-left: 400px;
   padding: 20px;
-  font-family: HelNowReg;
+  font-family: HelNowReg, "Inter", sans-serif;
   a,
   p {
     text-decoration: none;
@@ -26,4 +21,12 @@
 
 .contactContainer p:nth-child(6) {
   padding-top: 10px;
+}
+
+@media all and (max-width: 959px) {
+  .contactContainer {
+    display: grid;
+    grid-template-columns: repeat(autofill, minmax(320px, 400px));
+    margin-left: 0;
+  }
 }
