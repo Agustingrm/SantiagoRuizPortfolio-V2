@@ -109,19 +109,22 @@
 }
 
 @media all and (max-width: 959px) {
+  .showMenuDetails {
+    display: none;
+  }
+  .transitionMenuDetails {
+    transform: translateY(1000px);
+  }
+
   .detailsContainer {
     width: 100%;
     margin-left: 0;
     box-sizing: border-box;
-    top: 74px;
     position: relative;
     overflow-y: scroll;
-    height: calc(100vh - 74px);
+    transform: translateY(74px);
+    // height: calc(100vh - 74px);
     z-index: 0 !important;
-    .showMenu,
-    .transitionMenu {
-      display: none !important;
-    }
   }
 
   .detailNameMobile,
@@ -143,9 +146,9 @@
   .detailYearMobile {
     padding-bottom: 10px;
   }
-  ::-webkit-scrollbar {
-    width: 0px;
-  }
+  // ::-webkit-scrollbar {
+  //   width: 0px;
+  // }
 
   .projectInfoMobile {
     display: block;
@@ -170,6 +173,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 10px 10px;
+    height: 46px;
   }
 
   .slick-next,

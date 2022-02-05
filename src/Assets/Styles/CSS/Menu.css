@@ -5,6 +5,7 @@
   position: fixed;
   background-color: transparent;
   box-sizing: border-box;
+  opacity: 1;
 }
 .container ul {
   list-style-type: none;

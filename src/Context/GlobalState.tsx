@@ -70,7 +70,6 @@ function GlobalState({ children }: { children: ReactNode }): JSX.Element {
         // set the data to state
         setProjects(res.data.SiteSettings);
         setLoading(false);
-        console.log(res.data.SiteSettings);
       });
   }, []);
 
