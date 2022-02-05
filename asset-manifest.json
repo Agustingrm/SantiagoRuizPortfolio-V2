@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SantiagoRuizPortfolio-V2/static/css/main.3421e67e.chunk.css",
-    "main.js": "/SantiagoRuizPortfolio-V2/static/js/main.c092ef44.chunk.js",
-    "main.js.map": "/SantiagoRuizPortfolio-V2/static/js/main.c092ef44.chunk.js.map",
+    "main.css": "/SantiagoRuizPortfolio-V2/static/css/main.e565f21f.chunk.css",
+    "main.js": "/SantiagoRuizPortfolio-V2/static/js/main.8e4ce543.chunk.js",
+    "main.js.map": "/SantiagoRuizPortfolio-V2/static/js/main.8e4ce543.chunk.js.map",
     "runtime-main.js": "/SantiagoRuizPortfolio-V2/static/js/runtime-main.5eb1edef.js",
     "runtime-main.js.map": "/SantiagoRuizPortfolio-V2/static/js/runtime-main.5eb1edef.js.map",
     "static/js/2.46bbe27e.chunk.js": "/SantiagoRuizPortfolio-V2/static/js/2.46bbe27e.chunk.js",
     "static/js/2.46bbe27e.chunk.js.map": "/SantiagoRuizPortfolio-V2/static/js/2.46bbe27e.chunk.js.map",
     "index.html": "/SantiagoRuizPortfolio-V2/index.html",
-    "static/css/main.3421e67e.chunk.css.map": "/SantiagoRuizPortfolio-V2/static/css/main.3421e67e.chunk.css.map",
+    "static/css/main.e565f21f.chunk.css.map": "/SantiagoRuizPortfolio-V2/static/css/main.e565f21f.chunk.css.map",
     "static/js/2.46bbe27e.chunk.js.LICENSE.txt": "/SantiagoRuizPortfolio-V2/static/js/2.46bbe27e.chunk.js.LICENSE.txt",
     "static/media/aboutPhoto.59f85064.png": "/SantiagoRuizPortfolio-V2/static/media/aboutPhoto.59f85064.png",
     "static/media/crossHorizontal.862433b3.svg": "/SantiagoRuizPortfolio-V2/static/media/crossHorizontal.862433b3.svg",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.5eb1edef.js",
     "static/js/2.46bbe27e.chunk.js",
-    "static/css/main.3421e67e.chunk.css",
-    "static/js/main.c092ef44.chunk.js"
+    "static/css/main.e565f21f.chunk.css",
+    "static/js/main.8e4ce543.chunk.js"
   ]
 }
