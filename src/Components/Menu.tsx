@@ -34,7 +34,7 @@ function Menu(): JSX.Element {
     if (window.innerWidth < 960) {
       context.setDisplay("hideMenu");
     }
-  });
+  }, []);
 
   return (
     <div className="container">
