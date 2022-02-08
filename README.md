@@ -3,7 +3,7 @@
 This project was the first one I did as a freelancer for a client. The client is an industrial designer and wanted a portfolio of his work to show it to clients. 
 The client had quite definite ideas about the design of the page, for which he also provided typographies (In this case they are not included since they are not free to use, but a similar one is included).
 
-## App development
+## Language and Technologies Employed
 
 - The application was made through **React** with **Typescript**.
 - The styling was applied through **SASS** and applied to each particular file.
