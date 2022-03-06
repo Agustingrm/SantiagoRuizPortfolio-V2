@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/SantiagoRuizPortfolio-V2/static/css/main.0a5084fb.chunk.css",
-    "main.js": "/SantiagoRuizPortfolio-V2/static/js/main.1d4214cb.chunk.js",
-    "main.js.map": "/SantiagoRuizPortfolio-V2/static/js/main.1d4214cb.chunk.js.map",
-    "runtime-main.js": "/SantiagoRuizPortfolio-V2/static/js/runtime-main.5eb1edef.js",
-    "runtime-main.js.map": "/SantiagoRuizPortfolio-V2/static/js/runtime-main.5eb1edef.js.map",
-    "static/js/2.46bbe27e.chunk.js": "/SantiagoRuizPortfolio-V2/static/js/2.46bbe27e.chunk.js",
-    "static/js/2.46bbe27e.chunk.js.map": "/SantiagoRuizPortfolio-V2/static/js/2.46bbe27e.chunk.js.map",
-    "index.html": "/SantiagoRuizPortfolio-V2/index.html",
-    "static/css/main.0a5084fb.chunk.css.map": "/SantiagoRuizPortfolio-V2/static/css/main.0a5084fb.chunk.css.map",
-    "static/js/2.46bbe27e.chunk.js.LICENSE.txt": "/SantiagoRuizPortfolio-V2/static/js/2.46bbe27e.chunk.js.LICENSE.txt",
-    "static/media/aboutPhoto.59f85064.png": "/SantiagoRuizPortfolio-V2/static/media/aboutPhoto.59f85064.png",
-    "static/media/crossHorizontal.862433b3.svg": "/SantiagoRuizPortfolio-V2/static/media/crossHorizontal.862433b3.svg",
-    "static/media/crossVertical.fb791d70.svg": "/SantiagoRuizPortfolio-V2/static/media/crossVertical.fb791d70.svg",
-    "static/media/Details.css": "/SantiagoRuizPortfolio-V2/static/media/rightArrow.1a2ff506.svg"
+    "main.css": "/portfolioV2/static/css/main.62ba078b.chunk.css",
+    "main.js": "/portfolioV2/static/js/main.ea8d36a1.chunk.js",
+    "main.js.map": "/portfolioV2/static/js/main.ea8d36a1.chunk.js.map",
+    "runtime-main.js": "/portfolioV2/static/js/runtime-main.bf4ee7ca.js",
+    "runtime-main.js.map": "/portfolioV2/static/js/runtime-main.bf4ee7ca.js.map",
+    "static/js/2.670664ec.chunk.js": "/portfolioV2/static/js/2.670664ec.chunk.js",
+    "static/js/2.670664ec.chunk.js.map": "/portfolioV2/static/js/2.670664ec.chunk.js.map",
+    "index.html": "/portfolioV2/index.html",
+    "static/css/main.62ba078b.chunk.css.map": "/portfolioV2/static/css/main.62ba078b.chunk.css.map",
+    "static/js/2.670664ec.chunk.js.LICENSE.txt": "/portfolioV2/static/js/2.670664ec.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/portfolioV2/static/media/HelveticaNowDisplay-Regular.7a5d20e3.woff",
+    "static/media/aboutPhoto.59f85064.png": "/portfolioV2/static/media/aboutPhoto.59f85064.png",
+    "static/media/crossHorizontal.862433b3.svg": "/portfolioV2/static/media/crossHorizontal.862433b3.svg",
+    "static/media/crossVertical.fb791d70.svg": "/portfolioV2/static/media/crossVertical.fb791d70.svg",
+    "static/media/Details.css": "/portfolioV2/static/media/rightArrow.1a2ff506.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5eb1edef.js",
-    "static/js/2.46bbe27e.chunk.js",
-    "static/css/main.0a5084fb.chunk.css",
-    "static/js/main.1d4214cb.chunk.js"
+    "static/js/runtime-main.bf4ee7ca.js",
+    "static/js/2.670664ec.chunk.js",
+    "static/css/main.62ba078b.chunk.css",
+    "static/js/main.ea8d36a1.chunk.js"
   ]
 }
