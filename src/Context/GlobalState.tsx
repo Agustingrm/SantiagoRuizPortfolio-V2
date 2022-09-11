@@ -39,7 +39,7 @@ function GlobalState({ children }: { children: ReactNode }): JSX.Element {
   });
   // Use a side effect to fetch he data from the graphql endpoint
   useEffect(function () {
-    fetch("https://0ineey38.api.sanity.io/v1/graphql/production/default", {
+    fetch("https://ephhvxyc.api.sanity.io/v1/graphql/production/default", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
